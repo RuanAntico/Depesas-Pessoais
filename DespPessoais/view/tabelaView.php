@@ -1,7 +1,6 @@
 <?php
 require_once __DIR__ . "/../model/ValorTotalModel.php";
 
-// Configura localização para português
 setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
 date_default_timezone_set('America/Sao_Paulo');
 
@@ -10,7 +9,6 @@ if (session_status() === PHP_SESSION_NONE) session_start();
 $model = new ValorTotalModel();
 $dados = $model->listarDespesas($_SESSION['codUsuario']);
 
-// Agrupa despesas por mês
 $despesasPorMes = [];
 foreach ($dados as $despesa) {
     $mesAno = $despesa['mes_ano'];
